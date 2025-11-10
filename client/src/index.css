@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  /* Material 3 Expressive Style Palette (Purple Theme) */
+  --color-primary: #7f56d9;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #e9d7fe;
+  --color-on-primary-container: #2b0052;
+
+  --color-secondary: #d6bbfb;
+  --color-on-secondary: #381e72;
+  --color-secondary-container: #eaddff;
+  --color-on-secondary-container: #21005d;
+
+  --color-surface: #fffbff;
+  --color-on-surface: #1d1b20;
+  --color-surface-variant: #f3e8ff;
+  --color-on-surface-variant: #6b4fa0;
+
+  --color-outline: #e2d5f0;
+  --color-background: #f7f2fa;
+  --color-on-background: #1d1b20;
+
+  /* Semantic colors for status indicators */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-destructive: #dc2626;
+
+  /* Keep existing theme colors for compatibility */
+  --color-foreground: oklch(var(--foreground));
+  --color-card: oklch(var(--card));
+  --color-card-foreground: oklch(var(--card-foreground));
+  --color-popover: oklch(var(--popover));
+  --color-popover-foreground: oklch(var(--popover-foreground));
+  --color-primary-foreground: oklch(var(--primary-foreground));
+  --color-secondary-foreground: oklch(var(--secondary-foreground));
+  --color-muted: oklch(var(--muted));
+  --color-muted-foreground: oklch(var(--muted-foreground));
+  --color-accent: oklch(var(--accent));
+  --color-accent-foreground: oklch(var(--accent-foreground));
+  --color-destructive-foreground: oklch(var(--destructive-foreground));
+  --color-border: oklch(var(--border));
+  --color-input: oklch(var(--input));
+  --color-ring: oklch(var(--ring));
+
+  --radius: 0.5rem;
+  --font-sans: "Roboto", sans-serif;
+  --font-display: "Google Sans", sans-serif;
+}
+
+:root {
+  --background: 100% 0 0;
+  --foreground: 16.17% 0.0195 264.79;
+  --card: 100% 0 0;
+  --card-foreground: 16.17% 0.0195 264.79;
+  --popover: 100% 0 0;
+  --popover-foreground: 16.17% 0.0195 264.79;
+  --primary: 64.75% 0.176 265.75;
+  --primary-foreground: 96.72% 0.0041 264.66;
+  --secondary: 96.72% 0.0041 264.66;
+  --secondary-foreground: 27.34% 0.0325 265.76;
+  --muted: 96.72% 0.0041 264.66;
+  --muted-foreground: 64.93% 0.0214 265.92;
+  --accent: 96.72% 0.0041 264.66;
+  --accent-foreground: 27.34% 0.0325 265.76;
+  --destructive: 64.37% 0.1686 29.23;
+  --destructive-foreground: 96.72% 0.0041 264.66;
+  --border: 91.93% 0.0119 264.53;
+  --input: 91.93% 0.0119 264.53;
+  --ring: 64.75% 0.176 265.75;
+}
+
+.dark {
+  --background: 16.17% 0.0195 264.79;
+  --foreground: 96.72% 0.0041 264.66;
+  --card: 16.17% 0.0195 264.79;
+  --card-foreground: 96.72% 0.0041 264.66;
+  --popover: 16.17% 0.0195 264.79;
+  --popover-foreground: 96.72% 0.0041 264.66;
+  --primary: 72.12% 0.1504 266.77;
+  --primary-foreground: 27.34% 0.0325 265.76;
+  --secondary: 31.92% 0.0378 266.02;
+  --secondary-foreground: 96.72% 0.0041 264.66;
+  --muted: 31.92% 0.0378 266.02;
+  --muted-foreground: 78.39% 0.0247 266.16;
+  --accent: 31.92% 0.0378 266.02;
+  --accent-foreground: 96.72% 0.0041 264.66;
+  --destructive: 45.37% 0.1064 29.7;
+  --destructive-foreground: 96.72% 0.0041 264.66;
+  --border: 31.92% 0.0378 266.02;
+  --input: 31.92% 0.0378 266.02;
+  --ring: 64.75% 0.176 265.75;
+}
+
+.mirror {
+  transform: scaleX(-1);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Material Symbols filled variant */
+.material-symbols-outlined.icon-filled {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+/* Custom gradient background */
+.bg-gradient-subtle {
+  background-image: radial-gradient(
+      circle at 1% 1%,
+      hsla(259, 100%, 96%, 1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 99% 99%,
+      hsla(320, 100%, 97%, 1) 0%,
+      transparent 50%
+    );
+}
+
+/* Pulse animation */
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(127, 86, 217, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(127, 86, 217, 0);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite;
+}
+
+/* Font family utilities */
+.font-display {
+  font-family: "Google Sans", sans-serif;
+}
